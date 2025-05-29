@@ -4,10 +4,10 @@ import React from "react";
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-indigo-100 px-4 min-h-screen">
-      <h1 className="mb-4 font-bold text-violet-900 text-5xl">
+      <h1 className="mb-10 font-bold text-violet-900 text-5xl">
         Lazy Schedule App
       </h1>
-      <p className="mb-8 max-w-xl text-md text-violet-500 text-center">
+      <p className="mb-8 max-w-xl text-md text-violet-400 text-center">
         Welcome to the Lazy Schedule App! Effortlessly organize your tasks.
       </p>
       <div className="flex gap-4">

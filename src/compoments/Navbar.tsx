@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -37,7 +38,8 @@ const Navbar: React.FC = () => {
           </a>
           <a
             href="#about"
-            className="text-indigo-100 hover:text-violet-300 transition">
+            className="text-indigo-100 hover:text-violet-300 transition"
+          >
             About
           </a>
           <a
@@ -57,7 +59,8 @@ const Navbar: React.FC = () => {
           </a>
           <a
             href="#about"
-            className="text-indigo-100 hover:text-violet-300 transition">
+            className="text-indigo-100 hover:text-violet-300 transition"
+            >
             About
           </a>
           <a

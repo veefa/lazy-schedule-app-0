@@ -9,12 +9,14 @@ import "./index.css"
 
  
 const App: React.FC = () => {
+  
+
   return (
-    <div className="bg-slate-400 min-h-screen">
+    <div className="bg-indigo-100 min-h-screen">
       <h1></h1>
       <Navbar/>
-        <Home/>
-      <About/>
+        <Home />
+     <About />
       <Contact/>
 
     </div>
