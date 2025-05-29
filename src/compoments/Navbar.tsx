@@ -6,9 +6,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-violet-800 shadow px-6 py-4 w-full">
       <div className="flex justify-between items-center">
-        <span className="font-bold text-indigo-100 text-2xl">
+        <a href="#home" className="font-bold text-indigo-100 hover:text-violet-300 text-2xl">
           Lazy Schedule
-        </span>
+        </a>
 
         {/* Hamburger menu button */}
         <button
@@ -33,20 +33,15 @@ const Navbar: React.FC = () => {
           <a
             href="#"
             className="text-indigo-100 hover:text-violet-300 transition">
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-indigo-100 hover:text-violet-300 transition">
             Features
           </a>
           <a
-            href="#"
+            href="#about"
             className="text-indigo-100 hover:text-violet-300 transition">
             About
           </a>
           <a
-            href="#"
+            href="#contact"
             className="text-indigo-100 hover:text-violet-300 transition">
             Contact
           </a>
@@ -58,20 +53,15 @@ const Navbar: React.FC = () => {
           <a
             href="#"
             className="text-indigo-100 hover:text-violet-300 transition">
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-indigo-100 hover:text-violet-300 transition">
             Features
           </a>
           <a
-            href="#"
+            href="#about"
             className="text-indigo-100 hover:text-violet-300 transition">
             About
           </a>
           <a
-            href="#"
+            href="#contact"
             className="text-indigo-100 hover:text-violet-300 transition">
             Contact
           </a>
