@@ -11,7 +11,12 @@ const Home: React.FC = () => {
         Welcome to the Lazy Schedule App! Effortlessly organize your tasks.
       </p>
       <div className="flex gap-4">
-        <button className="bg-violet-800 hover:bg-violet-500 shadow-sm px-6 py-2 rounded font-semibold text-indigo-100 transition">
+        <button
+          className="bg-violet-800 hover:bg-violet-500 shadow-sm px-6 py-2 rounded font-semibold text-indigo-100 transition"
+          onClick={() => {
+            document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           Get Started
         </button>
         <button className="hover:bg-violet-500 px-6 py-2 border-2 border-violet-500 rounded text-violet-800 transition">
