@@ -61,13 +61,13 @@ const FaceClock: React.FC = () => {
     }
   };
 
-  const VIOLET = "#5b21b6";
-  const INDIGO = "#e0e7ff";
-  const VIOLET_LIGHT = "#a78bfa";
-  const MUTED_YELLOW = "#f7e3af";
-  const MUTED_GREEN = "#b7d7b0";
+  // Sanzo Wada & Brand Color Palette
+  const VIOLET = "#5b21b6"; // Brand Violet
+  const INDIGO = "#e0e7ff"; // Brand Indigo
+  const VIOLET_LIGHT = "#a78bfa"; // Brand Violet Light
   const WARM_GRAY = "#bcbcbc";
   const ACCENT_RED = "#e06c75";
+
 
   return (
     <div className="mx-auto pt-6 w-full max-w-[320px] sm:max-w-[480px] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px]">
@@ -150,7 +150,7 @@ const FaceClock: React.FC = () => {
               <TimeBlockArc
                 startHour={task.startHour}
                 endHour={task.endHour}
-                radius={arcRadius} // <-- use arcRadius here!
+                radius={arcRadius}
                 centerX={centerX}
                 centerY={centerY}
                 color={task.color}
@@ -163,7 +163,7 @@ const FaceClock: React.FC = () => {
                 dominantBaseline="middle"
                 fontSize={13}
                 fontWeight="bold"
-                fill="#22223b"
+                fill="#4c1d95" // text-violet-900
                 style={{
                   pointerEvents: "none",
                   userSelect: "none",
@@ -179,7 +179,7 @@ const FaceClock: React.FC = () => {
           angle={hourAngle}
           length={100}
           width={3}
-          color={WARM_GRAY}
+          color={WARM_GRAY} // keep as is
           centerX={centerX}
           centerY={centerY}
         />
@@ -187,7 +187,7 @@ const FaceClock: React.FC = () => {
           angle={minuteAngle}
           length={140}
           width={2}
-          color={ACCENT_RED}
+          color={ACCENT_RED} // keep as is
           centerX={centerX}
           centerY={centerY}
         />
@@ -198,7 +198,7 @@ const FaceClock: React.FC = () => {
         <input
           type="text"
           placeholder="Task name"
-          className="px-2 py-1 border rounded w-full"
+          className="px-2 py-1 border border-[#bcbcbc] rounded w-full"
           value={newTask.name}
           onChange={(e) =>
             setNewTask((prev) => ({ ...prev, name: e.target.value }))
@@ -209,7 +209,7 @@ const FaceClock: React.FC = () => {
             type="number"
             step="0.01"
             placeholder="Start hour"
-            className="px-2 py-1 border rounded w-1/2"
+            className="px-2 py-1 border border-[#bcbcbc] rounded w-1/2"
             value={newTask.startHour}
             onChange={(e) => {
               let value = Number(e.target.value);
@@ -228,7 +228,7 @@ const FaceClock: React.FC = () => {
             type="number"
             step="0.01"
             placeholder="End hour"
-            className="px-2 py-1 border rounded w-1/2"
+            className="px-2 py-1 border border-[#bcbcbc] rounded w-1/2"
             value={newTask.endHour}
             onChange={(e) => {
               let value = Number(e.target.value);
@@ -243,10 +243,9 @@ const FaceClock: React.FC = () => {
             min={0}
             max={23.99}
           />
-          {/* Color picker for task */}
           <input
             type="color"
-            className="p-0 border rounded w-10 h-10"
+            className="p-0 border border-[#bcbcbc] rounded w-10 h-10"
             value={newTask.color}
             onChange={(e) =>
               setNewTask((prev) => ({ ...prev, color: e.target.value }))
@@ -255,33 +254,31 @@ const FaceClock: React.FC = () => {
           />
         </div>
         <div className="flex gap-2">
-            <button
-              onClick={handleAddTask}
-              className="flex-1 px-4 py-1 rounded text-white"
-              style={{ background: MUTED_GREEN }}
-              disabled={
-                !newTask.name ||
-                newTask.startHour === newTask.endHour ||
-                newTask.startHour < 0 ||
-                newTask.endHour > 23.99
-              }>
-              Add Task
-            </button>
-            <button
-              onClick={() => {
-                setTasks([]);
-                setNewTask({
-                  name: "",
-                  startHour: 0,
-                  endHour: 1,
-                  color: "#8b5cf6",
-                });
-              }}
-              className="flex-1 px-4 py-2 rounded text-white"
-              style={{ background: MUTED_YELLOW }}
-              type="button">
-              Reset
-            </button>
+          <button
+            onClick={handleAddTask}
+            className="flex-1 bg-[#4ca866] hover:bg-[#35794a] px-4 py-1 rounded text-white transition-colors"
+            disabled={
+              !newTask.name ||
+              newTask.startHour === newTask.endHour ||
+              newTask.startHour < 0 ||
+              newTask.endHour > 23.99
+            }>
+            Add Task
+          </button>
+          <button
+            onClick={() => {
+              setTasks([]);
+              setNewTask({
+                name: "",
+                startHour: 0,
+                endHour: 1,
+                color: "#8b5cf6",
+              });
+            }}
+            className="flex-1 bg-[#e06c75] hover:bg-[#b94c54] px-4 py-2 rounded text-white transition-colors"
+            type="button">
+            Reset
+          </button>
         </div>
       </div>
     </div>

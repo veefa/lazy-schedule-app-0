@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./compoments/Home";
 import Navbar from "./compoments/Navbar";
 import About from "./compoments/About";
@@ -8,9 +8,23 @@ import Footer from "./compoments/Footer";
 import LazySchedulePage from "./pages/LazySchedulePage";
 import "./index.css";
 
+function ScrollToHash() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.replace("#", ""));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+  return null;
+}
+
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToHash />
       <div className="bg-indigo-100 min-h-screen">
         <Navbar />
         <Routes>

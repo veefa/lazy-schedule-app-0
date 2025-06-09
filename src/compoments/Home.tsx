@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Home: React.FC = () => {
    const navigate = useNavigate();
   return (
-    <div className="flex flex-col justify-center items-center bg-indigo-100 px-4 min-h-screen">
+    <div id="home" className="flex flex-col justify-center items-center bg-indigo-100 px-4 min-h-screen">
       <h1 className="mb-10 font-bold text-violet-900 text-5xl">
         Lazy Schedule App
       </h1>
@@ -25,7 +25,11 @@ const Home: React.FC = () => {
           Learn More...
         </button>
       </div>
-     
+      <div className="absolute top-4 left-4">
+        <Link to="/" className="text-violet-900 hover:underline">
+          Home
+        </Link>
+      </div>
     </div>
   );
 };
