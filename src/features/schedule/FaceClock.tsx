@@ -64,6 +64,10 @@ const FaceClock: React.FC = () => {
   const VIOLET = "#5b21b6";
   const INDIGO = "#e0e7ff";
   const VIOLET_LIGHT = "#a78bfa";
+  const MUTED_YELLOW = "#f7e3af";
+  const MUTED_GREEN = "#b7d7b0";
+  const WARM_GRAY = "#bcbcbc";
+  const ACCENT_RED = "#e06c75";
 
   return (
     <div className="mx-auto pt-6 w-full max-w-[320px] sm:max-w-[480px] md:max-w-[600px] lg:max-w-[700px] xl:max-w-[800px]">
@@ -78,7 +82,7 @@ const FaceClock: React.FC = () => {
           cy={centerY}
           r={radius}
           fill={INDIGO}
-          fillOpacity={0.7}
+          fillOpacity={1}
           stroke={VIOLET}
           strokeWidth="7"
         />
@@ -86,8 +90,7 @@ const FaceClock: React.FC = () => {
         <g>
           {[...Array(24)].map((_, i) => {
             const angle = (i / 24) * 2 * Math.PI;
-            // Use a slightly smaller radius for numbers
-            const numberRadius = radius * 0.95;
+            const numberRadius = radius * 0.94;
             const x = centerX + numberRadius * Math.sin(angle);
             const y = centerY - numberRadius * Math.cos(angle);
 
@@ -176,7 +179,7 @@ const FaceClock: React.FC = () => {
           angle={hourAngle}
           length={100}
           width={3}
-          color="#333"
+          color={WARM_GRAY}
           centerX={centerX}
           centerY={centerY}
         />
@@ -184,12 +187,12 @@ const FaceClock: React.FC = () => {
           angle={minuteAngle}
           length={140}
           width={2}
-          color="#333"
+          color={ACCENT_RED}
           centerX={centerX}
           centerY={centerY}
         />
         {/* center dot*/}
-        <circle cx={centerX} cy={centerY} r={7} fill="#333" />
+        <circle cx={centerX} cy={centerY} r={7} fill={ACCENT_RED} />
       </svg>
       <div className="space-y-2 mt-4 px-4">
         <input
@@ -252,31 +255,33 @@ const FaceClock: React.FC = () => {
           />
         </div>
         <div className="flex gap-2">
-          <button
-            onClick={handleAddTask}
-            className="flex-1 bg-green-600 px-4 py-1 rounded text-white"
-            disabled={
-              !newTask.name ||
-              newTask.startHour === newTask.endHour ||
-              newTask.startHour < 0 ||
-              newTask.endHour > 23.99
-            }>
-            Add Task
-          </button>
-          <button
-            onClick={() => {
-              setTasks([]);
-              setNewTask({
-                name: "",
-                startHour: 0,
-                endHour: 1,
-                color: "#8b5cf6",
-              });
-            }}
-            className="flex-1 bg-red-500 px-4 py-2 rounded text-white"
-            type="button">
-            Reset
-          </button>
+            <button
+              onClick={handleAddTask}
+              className="flex-1 px-4 py-1 rounded text-white"
+              style={{ background: MUTED_GREEN }}
+              disabled={
+                !newTask.name ||
+                newTask.startHour === newTask.endHour ||
+                newTask.startHour < 0 ||
+                newTask.endHour > 23.99
+              }>
+              Add Task
+            </button>
+            <button
+              onClick={() => {
+                setTasks([]);
+                setNewTask({
+                  name: "",
+                  startHour: 0,
+                  endHour: 1,
+                  color: "#8b5cf6",
+                });
+              }}
+              className="flex-1 px-4 py-2 rounded text-white"
+              style={{ background: MUTED_YELLOW }}
+              type="button">
+              Reset
+            </button>
         </div>
       </div>
     </div>
