@@ -56,22 +56,22 @@ const Navbar: React.FC = () => {
       </div>
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden flex flex-col gap-4 mt-4 font-semibold">
+        <div className="md:hidden flex flex-col gap-4 bg-violet-800 shadow-lg mt-4 p-4 rounded font-semibold">
           <Link
             to="/#features"
-            className="text-indigo-100 hover:text-violet-300 transition"
+            className="px-2 py-2 rounded text-indigo-100 hover:text-violet-300 transition"
             onClick={handleMobileLinkClick}>
             Features
           </Link>
           <Link
             to="/#about"
-            className="text-indigo-100 hover:text-violet-300 transition"
+            className="px-2 py-2 rounded text-indigo-100 hover:text-violet-300 transition"
             onClick={handleMobileLinkClick}>
             About
           </Link>
           <Link
             to="/#contact"
-            className="text-indigo-100 hover:text-violet-300 transition"
+            className="px-2 py-2 rounded text-indigo-100 hover:text-violet-300 transition"
             onClick={handleMobileLinkClick}>
             Contact
           </Link>
