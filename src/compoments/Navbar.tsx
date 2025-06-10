@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Helper to close menu after navigation
+  const handleMobileLinkClick = () => setMenuOpen(false);
+
   return (
     <nav className="bg-violet-800 shadow px-6 py-4 w-full">
       <div className="flex justify-between items-center">
-        <a href="#home" className="font-bold text-indigo-100 hover:text-violet-300 text-2xl">
+        <Link
+          to="/#home"
+          className="font-bold text-indigo-100 hover:text-violet-300 text-2xl"
+          onClick={handleMobileLinkClick}>
           Lazy Schedule
-        </a>
+        </Link>
 
         {/* Hamburger menu button */}
         <button
@@ -31,43 +37,44 @@ const Navbar: React.FC = () => {
         </button>
         {/* Desktop menu */}
         <div className="hidden md:flex gap-6 font-semibold">
-          <a
-            href="#"
+          <Link
+            to="/#features"
             className="text-indigo-100 hover:text-violet-300 transition">
             Features
-          </a>
-          <a
-            href="#about"
-            className="text-indigo-100 hover:text-violet-300 transition"
-          >
+          </Link>
+          <Link
+            to="/#about"
+            className="text-indigo-100 hover:text-violet-300 transition">
             About
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="/#contact"
             className="text-indigo-100 hover:text-violet-300 transition">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden flex flex-col gap-4 mt-4 font-semibold">
-          <a
-            href="#"
-            className="text-indigo-100 hover:text-violet-300 transition">
-            Features
-          </a>
-          <a
-            href="#about"
+          <Link
+            to="/#features"
             className="text-indigo-100 hover:text-violet-300 transition"
-            >
+            onClick={handleMobileLinkClick}>
+            Features
+          </Link>
+          <Link
+            to="/#about"
+            className="text-indigo-100 hover:text-violet-300 transition"
+            onClick={handleMobileLinkClick}>
             About
-          </a>
-          <a
-            href="#contact"
-            className="text-indigo-100 hover:text-violet-300 transition">
+          </Link>
+          <Link
+            to="/#contact"
+            className="text-indigo-100 hover:text-violet-300 transition"
+            onClick={handleMobileLinkClick}>
             Contact
-          </a>
+          </Link>
         </div>
       )}
     </nav>

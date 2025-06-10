@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Home: React.FC = () => {
@@ -25,11 +25,7 @@ const Home: React.FC = () => {
           Learn More...
         </button>
       </div>
-      <div className="absolute top-4 left-4">
-        <Link to="/" className="text-violet-900 hover:underline">
-          Home
-        </Link>
-      </div>
+     
     </div>
   );
 };
