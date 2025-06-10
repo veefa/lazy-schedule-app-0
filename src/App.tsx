@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Home from "./compoments/Home";
-import Navbar from "./compoments/Navbar";
-import About from "./compoments/About";
-import Contact from "./compoments/Contact";
-import Footer from "./compoments/Footer";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import LazySchedulePage from "./pages/LazySchedulePage";
 import "./index.css";
 
